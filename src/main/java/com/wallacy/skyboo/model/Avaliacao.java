@@ -43,4 +43,70 @@ public class Avaliacao {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "avaliacao", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("avaliacao")
     private List<Curtida> usuariosCurtiram;
+
+    // Getters e Setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Double getNota() {
+        return nota;
+    }
+
+    public void setNota(Double nota) {
+        this.nota = nota;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+
+    public void setTexto(String texto) {
+        this.texto = texto;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public void setData(LocalDateTime data) {
+        this.data = data;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public void setLivro(Livro livro) {
+        this.livro = livro;
+    }
+
+    public List<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<Comentario> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public List<Curtida> getUsuariosCurtiram() {
+        return usuariosCurtiram;
+    }
+
+    public void setUsuariosCurtiram(List<Curtida> usuariosCurtiram) {
+        this.usuariosCurtiram = usuariosCurtiram;
+    }
 }

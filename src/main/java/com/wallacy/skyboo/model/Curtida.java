@@ -29,4 +29,45 @@ public class Curtida {
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario; // Relacionamento com o usuário
 
+    // Getters e Setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
+    }
+
+    public TipoItem getTipoItem() {
+        return tipoItem;
+    }
+
+    public void setTipoItem(TipoItem tipoItem) {
+        this.tipoItem = tipoItem;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public void setData(LocalDateTime data) {
+        this.data = data;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }

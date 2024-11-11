@@ -27,5 +27,37 @@ public class LivrosLidos {
     @UpdateTimestamp
     private LocalDateTime dataLeitura;
 
+    // Getters e Setters
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public void setLivro(Livro livro) {
+        this.livro = livro;
+    }
+
+    public LocalDateTime getDataLeitura() {
+        return dataLeitura;
+    }
+
+    public void setDataLeitura(LocalDateTime dataLeitura) {
+        this.dataLeitura = dataLeitura;
+    }
 }

@@ -69,4 +69,109 @@ public class Livro {
     @JsonIgnoreProperties("livro")
     private List<Avaliacao> avaliacoes;
 
+    // GETTERS E SETTERS
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getEditora() {
+        return editora;
+    }
+
+    public void setEditora(String editora) {
+        this.editora = editora;
+    }
+
+    public String getAno() {
+        return ano;
+    }
+
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
+
+    public String getUrlCapa() {
+        return urlCapa;
+    }
+
+    public void setUrlCapa(String urlCapa) {
+        this.urlCapa = urlCapa;
+    }
+
+    public String getUrlPdf() {
+        return urlPdf;
+    }
+
+    public void setUrlPdf(String urlPdf) {
+        this.urlPdf = urlPdf;
+    }
+
+    public Double getAvaliacaoMedia() {
+        return avaliacaoMedia;
+    }
+
+    public void setAvaliacaoMedia(Double avaliacaoMedia) {
+        this.avaliacaoMedia = avaliacaoMedia;
+    }
+
+    public LocalDateTime getDataPublicacao() {
+        return dataPublicacao;
+    }
+
+    public void setDataPublicacao(LocalDateTime dataPublicacao) {
+        this.dataPublicacao = dataPublicacao;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public List<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
+    }
+
+    public List<Avaliacao> getAvaliacoes() {
+        return avaliacoes;
+    }
+
+    public void setAvaliacoes(List<Avaliacao> avaliacoes) {
+        this.avaliacoes = avaliacoes;
+    }
 }
