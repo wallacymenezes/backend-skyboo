@@ -1,5 +1,6 @@
 package com.wallacy.skyboo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -25,6 +26,11 @@ public class Comentario {
     @UpdateTimestamp
     private LocalDateTime data;
 
+    @ManyToOne
+    @JsonIgnoreProperties("comentarios")
+    private Usuario usuario;
 
-
+    @ManyToOne
+    @JsonIgnoreProperties("comentarios")
+    private Avaliacao avaliacao;
 }

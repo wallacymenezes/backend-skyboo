@@ -25,5 +25,8 @@ public class Curtida {
     @UpdateTimestamp
     private LocalDateTime data;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
+    private Usuario usuario; // Relacionamento com o usuário
 
 }

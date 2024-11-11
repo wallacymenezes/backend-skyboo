@@ -1,5 +1,6 @@
 package com.wallacy.skyboo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -8,6 +9,7 @@ import jakarta.validation.constraints.Size;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_livro")
@@ -49,4 +51,22 @@ public class Livro {
 
     @UpdateTimestamp
     private LocalDateTime dataPublicacao;
+
+    @ManyToOne
+    @JsonIgnoreProperties("livrosPublicados")
+    private Usuario usuario;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "tb_livro_categoria",
+            joinColumns = @JoinColumn(name = "livro_id"),
+            inverseJoinColumns = @JoinColumn(name = "categoria_id")
+    )
+    @JsonIgnoreProperties("livros")
+    private List<Categoria> categorias;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "livro", cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties("livro")
+    private List<Avaliacao> avaliacoes;
+
 }

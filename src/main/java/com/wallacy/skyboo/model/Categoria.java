@@ -1,8 +1,11 @@
 package com.wallacy.skyboo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_categoria")
@@ -19,5 +22,14 @@ public class Categoria {
     @NotBlank(message = "O atributo descricao é obrigatório")
     @Size(min = 10, max = 1000, message = "O atributo descrição deve ter entre 10 caracteres a 1000 caracteres")
     private String descricao;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "tb_livro_categoria",
+            joinColumns = @JoinColumn(name = "categoria_id"),
+            inverseJoinColumns = @JoinColumn(name = "livro_id")
+    )
+    @JsonIgnoreProperties("categorias")
+    private List<Livro> livros;
 
 }
