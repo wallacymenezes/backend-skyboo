@@ -64,6 +64,19 @@ public class Usuario {
     @JsonIgnoreProperties("usuario")
     private List<LivrosLidos> livrosLidos;
 
+    @ManyToMany
+    @JoinTable(
+            name = "tb_usuario_seguindo",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "seguindo_id")
+    )
+    @JsonIgnoreProperties("seguidores")
+    private List<Usuario> seguindo = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "seguindo")
+    @JsonIgnoreProperties("seguindo")
+    private List<Usuario> seguidores = new ArrayList<>();
+
     // GETTERS E SETTERS
 
     public Long getId() {
@@ -168,6 +181,22 @@ public class Usuario {
 
     public void setLivrosLidos(List<LivrosLidos> livrosLidos) {
         this.livrosLidos = livrosLidos;
+    }
+
+    public List<Usuario> getSeguindo() {
+        return seguindo;
+    }
+
+    public void setSeguindo(List<Usuario> seguindo) {
+        this.seguindo = seguindo;
+    }
+
+    public List<Usuario> getSeguidores() {
+        return seguidores;
+    }
+
+    public void setSeguidores(List<Usuario> seguidores) {
+        this.seguidores = seguidores;
     }
 
     public List<Curtida> getCurtidasLivro() {
