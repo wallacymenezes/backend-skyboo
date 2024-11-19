@@ -40,6 +40,10 @@ public class Avaliacao {
     @JsonIgnoreProperties("avaliacao")
     private List<Comentario> comentarios;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "avaliacao", cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties("avaliacao")
+    private List<CurtidasAvaliacao> curtidas;
+
     // Getters e Setters
 
     public Long getId() {
