@@ -42,7 +42,7 @@ public class Avaliacao {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "avaliacao", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("avaliacao")
-    private List<Curtida> usuariosCurtiram;
+    private List<CurtidasAvaliacao> curtidas;
 
     // Getters e Setters
 
@@ -100,13 +100,5 @@ public class Avaliacao {
 
     public void setComentarios(List<Comentario> comentarios) {
         this.comentarios = comentarios;
-    }
-
-    public List<Curtida> getUsuariosCurtiram() {
-        return usuariosCurtiram;
-    }
-
-    public void setUsuariosCurtiram(List<Curtida> usuariosCurtiram) {
-        this.usuariosCurtiram = usuariosCurtiram;
     }
 }

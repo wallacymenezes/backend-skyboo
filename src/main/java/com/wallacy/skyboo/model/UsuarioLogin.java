@@ -9,6 +9,8 @@ public class UsuarioLogin {
     private String senha;
     private String foto;
     private String biografia;
+
+    private String token;
     private boolean ativo;
 
     public Long getId() {
@@ -65,6 +67,14 @@ public class UsuarioLogin {
 
     public void setBiografia(String biografia) {
         this.biografia = biografia;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public boolean isAtivo() {
